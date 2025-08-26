@@ -3,22 +3,32 @@
 
 function Duplicate($array) : bool
 {
-    if(count($array) == 0)
-    {
-        return false;
-    }
 
-    
-    $result = 0;
+    //$array_count_values = array_count_values($array);
 
-    for($i = 0; $i < count($array); $i ++)
+    // 1 => 2
+    // 2 => 1
+    // 3 => 1
+
+
+    for($i = 1; $i <= count($array); $i ++)
     {
-            if($array[$i] === $array[$i + 1])
+
+        //$array_count_values = array_count_values($array);
+
+        $return = 0;
+        
+            if($array[$i] == 1)
             {
-                $result += 1;
+                $return += 0;
+            }
+            elseif($array[$i] >= 2)
+            {
+                $return += 1;
             }
     }
-    if($result >= 1)
+
+    if($return >= 1)
     {
         return true;
     }
@@ -29,8 +39,10 @@ function Duplicate($array) : bool
 }
 
 
-$array = [1, 2, 7, 3, 4, 5];
+$arrayD = array_count_values($array = [1, 2, 3]);
 
-echo Duplicate($array);
+
+
+echo Duplicate($arrayD);
 
 ?>
